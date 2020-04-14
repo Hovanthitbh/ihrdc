@@ -198,9 +198,9 @@
                                 <input type="submit" name="submit" value="Submit" class="btn btn-success">
                                 <button data-action="{{ route('saveRMAP',Auth::user()->id) }}" class="btn btn-success btn-reject" >{{ __("Save") }}</button>
                             @elseif(strcmp($status,'Submited') == 0)
-                                <button class="col-md-3 btn btn-success" name="submited">Submitted</button>
+                                <button class="col-md-3 btn btn-success no-click" name="submited">Submitted</button>
                             @elseif(strcmp($status,'Approved') == 0)
-                                <button class="col-md-3 btn btn-success" name="approved">Approved</button>
+                                <button class="col-md-3 btn btn-success no-click" name="approved">Approved</button>
                             @endif
                         @endif
 

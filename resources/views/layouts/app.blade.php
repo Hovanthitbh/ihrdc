@@ -174,12 +174,6 @@
                         </a>
                         @endhasanyrole
                     </div>
-                    <a href="{{ route('trainningManagementDashboard') }}" class="bg-dark list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-start align-items-center">
-                            <span class="fa fa-graduation-cap fa-fw mr-3"></span>
-                            <span class="menu-collapsed d-none">{{ __('Training Management') }}</span>
-                        </div>
-                    </a>
                     <a href="#top" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span id="collapse-icon" class="fa fa-2x mr-3"></span>
@@ -288,82 +282,7 @@
                                 </div>
                             </li>
                             @endhasanyrole
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ __('Training Management') }} <span class="caret"></span>
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarTrainningManagement">
-                                    @hasanyrole('employees|super-admin')
-                                    <a class="dropdown-item" href="{{   route('IATP',Auth::user()->id) }}"
-                                       onclick="">
-                                        {{ __('Individual Training') }}
-                                    </a>
-                                    @endhasanyrole
-
-                                    @hasanyrole('department_managers|director|super-admin')
-                                    <a class="dropdown-item" href="{{ route('DATP',Auth::user()->id) }}"
-                                       onclick="">
-                                        {{ __('Department Training') }}
-                                    </a>
-                                    @endhasanyrole
-
-                                    @hasanyrole('general_director|super-admin')
-                                    <a class="dropdown-item" href="{{ route('CATP',Auth::user()->id) }}"
-                                       onclick="">
-                                        {{ __('Company Training') }}
-                                    </a>
-                                    @endhasanyrole
-
-                                    @hasanyrole('employees|department_managers|general_director|super-admin')
-                                    <a class="dropdown-item" href="{{ route('PTEBP',Auth::user()->id) }}"
-                                       onclick="">
-                                        {{ __('Post training ẹvaluation') }}
-                                    </a>
-                                    @endhasanyrole
-
-                                    <div class="dropright dropdown-item submenu">
-                                        <a id="nav-approve-training" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {{ __('Approve Training') }}
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="approve-training-content">
-                                            @hasanyrole('employees|super-admin')
-                                            <a class="dropdown-item" href="{{ route('AIATP',Auth::user()->id) }}"onclick="">{{ __('Approve Individual Training Plan') }}</a>
-                                            @endhasanyrole
-                                            @hasanyrole('department_managers|director|super-admin')
-                                            <a class="dropdown-item" href="{{ route('ADATP',Auth::user()->id) }}"onclick="">{{ __('Approve Department Training Plan') }}</a>
-                                            @endhasanyrole
-                                            @hasanyrole('general_director|super-admin')
-                                            <a class="dropdown-item" href="{{ route('ACATP',Auth::user()->id) }}"onclick="">{{ __('Approve Company Training Plan') }}</a>
-                                            @endhasanyrole
-                                        </div>
-                                    </div>
-                                    @hasanyrole('employees|super-admin')
-                                    <a class="dropdown-item" href="{{ route('TI',Auth::user()->id) }}"
-                                       onclick="">
-                                        {{ __('Training Implementation') }}
-                                    </a>
-                                    @endhasanyrole
-                                    @hasanyrole('department_managers|director|super-admin')
-                                    <a class="dropdown-item" href="{{ route('TR',Auth::user()->id) }}"
-                                       onclick="">
-                                        {{ __('Training Implementation') }}
-                                    </a>
-                                    @endhasanyrole
-
-                                    @hasanyrole('general_director|super-admin')
-                                    <div class="dropright dropdown-item submenu">
-                                        <a id="nav-training-implementation" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {{ __('Training Implementation') }}
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="training-implementation-content">
-                                            <a class="dropdown-item" href="{{route('CATPS')}}"onclick="">{{ __('New Trainning Course') }}</a>
-                                            <a class="dropdown-item" href="{{route('CATPP')}}"onclick="">{{ __('Training Implementation') }}</a>
-                                        </div>
-                                    </div>
-                                    @endhasanyrole
-                                </div>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ __('Perfomance Management') }} <span class="caret"></span>
@@ -497,20 +416,4 @@
         </nav>
     </div>
 </body>
-<script type="text/javascript">
-    $(".datepicker").datepicker({
-        format: "yyyy",
-        viewMode: "years",
-        minViewMode: "years"
-    }).focus(function() {
-        $(this).prop("autocomplete", "off")
-    });
-    $(".datepicker-months").datepicker({
-        format: "yyyy-mm",
-        viewMode: "months",
-        minViewMode: "months"
-    }).focus(function() {
-        $(this).prop("autocomplete", "off")
-    });
-</script>
 </html>

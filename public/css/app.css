@@ -11573,4 +11573,6 @@ body {
   background-color: transparent;
   border: none;
 }
-
+.no-click {
+    pointer-events: none;
+}

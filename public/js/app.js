@@ -37123,6 +37123,21 @@ $(document).ready(function () {
   });
 });
 
+$(".datepicker").datepicker({
+        format: "yyyy",
+        viewMode: "years",
+        minViewMode: "years"
+    }).focus(function() {
+        $(this).prop("autocomplete", "off")
+    });
+    $(".datepicker-months").datepicker({
+        format: "yyyy-mm",
+        viewMode: "months",
+        minViewMode: "months"
+    }).focus(function() {
+        $(this).prop("autocomplete", "off")
+    });
+
 function SidebarCollapse() {
   $('.menu-collapsed').toggleClass('d-none');
   $('.sidebar-submenu').toggleClass('d-none');

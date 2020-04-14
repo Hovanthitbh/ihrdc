@@ -344,12 +344,12 @@
                             <input type="submit" name="submit" value="Submit" class="btn btn-success">
                             <button data-action="{{ route('saveRMMP',Auth::user()->id) }}" class="btn btn-success btn-reject" >Save</button>
                         @elseif(strcmp($status, 'Submited') == 0)
-                            <button class="col-md-3 btn btn-success" name="submited">Submited</button>
+                            <button class="col-md-3 btn btn-success no-click" name="submited">Submited</button>
                         @elseif(strcmp($status, 'Approved') ==0)
-                            <button class="col-md-3 btn btn-success" name="approved">Approved</button>
+                            <button class="col-md-3 btn btn-success no-click" name="approved">Approved</button>
                         @elseif(strcmp($status, 'Create') ==0)
                         <label for="submit"><b>SUBMIT TO DEPARTMENT FOR APPROVAL: </b>&emsp;</label>
-                        <input type="submit" name="submit" value="Submit" class="btn btn-success">
+                        <button data-action="{{ route('submitFirstRMMP',Auth::user()->id) }}" class="btn btn-success btn-reject" >Submit</button>
                         <button data-action="{{ route('createRMMP',Auth::user()->id) }}" class="btn btn-success btn-reject" >Save</button>
                         @endif
                    </form>
